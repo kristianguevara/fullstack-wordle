@@ -15,7 +15,7 @@ export default function Home() {
     const response = await fetch("/api/words");
     const words = await response.json();
     const randomIndex = Math.floor(Math.random() * words.length);
-    const word = words[randomIndex].toLowerCase();
+    const word = words[randomIndex].toLowerCase(); // Needed to lower case for validation
     setSelectedWord(word);
     setUserWords([]);
     setCurrentGuess("");
@@ -53,12 +53,13 @@ export default function Home() {
       } else if (event.key === "Backspace") {
         setCurrentGuess((prev) => prev.slice(0, -1));
       } else if (/^[a-zA-Z]$/.test(event.key)) {
+        // Validate if the key pressed is an alphabetic character while ensuring the guess is no longer than 5
         setCurrentGuess((prev) => (prev + event.key).slice(0, 5));
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown); // Cleanup that removes the event when unmounting
   }, [currentGuess, gameOver, selectedWord, userWords]);
 
   return (

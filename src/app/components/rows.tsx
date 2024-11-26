@@ -8,6 +8,8 @@ type RowProps = {
   gameOver: boolean;
 };
 
+const TRIES = 6;
+
 export default function Rows({ userWords, currentGuess, selectedWord, gameOver }: RowProps) {
   const feedback = (word: string) =>
     word.split("").map((letter, index) => {
@@ -16,7 +18,7 @@ export default function Rows({ userWords, currentGuess, selectedWord, gameOver }
       return "gray";
     });
 
-  const emptyRows = Array(6 - userWords.length - (gameOver ? 0 : 1)).fill("");
+  const emptyRows = Array(TRIES - userWords.length - (gameOver ? 0 : 1)).fill("");
 
   return (
     <div className="space-y-2">

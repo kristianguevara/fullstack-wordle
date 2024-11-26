@@ -26,7 +26,7 @@ The page.tsx file has a mix of UI rendering, state management, and logic. It wou
 Currently, there is minimal error handling in the initializeGame function. If the API request fails, the game could break. Adding proper error handling or a fallback mechanism would make the app more robust.
 
 3. Code Readability
-Some parts of the code, like the handleKeyDown function, are tightly coupled and could benefit from modularization. Breaking it into smaller, purpose-specific functions would improve clarity and maintainability.
+Some parts of the code, like the handleKeyDown function, are tightly coupled and could benefit from modularization. Breaking it into smaller, purpose-specific functions would improve clarity and maintainability. Rows component would also need to be subdivided to different components for better readability.
 
 4. Unit tests
 Maybe over-engineering but adding unit tests for the core logic would make the app more reliable 
