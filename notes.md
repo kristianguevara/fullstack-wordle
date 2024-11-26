@@ -19,7 +19,7 @@ Step 1
 ----
 
 # Other improvements
-1. Separateion of concerns
+1. Separation of concerns
 The page.tsx file has a mix of UI rendering, state management, and logic. It would be better to separate the logic into custom hooks or utility functions to make the component cleaner and easier to test.
 
 2. Error Handling
